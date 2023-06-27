@@ -23,6 +23,8 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
+			if (format[i + 1] == '\0')
+				return (-1);
 			fun = get_p_func(format[i + 1]);
 			if (fun != NULL && format[i + 1] != '%')
 			{
@@ -35,7 +37,9 @@ int _printf(const char *format, ...)
 				i++;
 			}
 			else
+			{
 				len += _putchar(format[i]);
+			}
 		}
 		else
 		{

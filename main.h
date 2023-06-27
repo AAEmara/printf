@@ -5,7 +5,7 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <string.h>
-
+#include <stdio.h>
 /**
  * struct flags - struct hold formated string flags.
  * @flag: flag to conseder.
