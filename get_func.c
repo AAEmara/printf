@@ -11,6 +11,8 @@ int (*get_p_func(char s))(va_list)
 	flags flags[] = {
 		{'c', print_char},
 		{'s', print_string},
+		{'i', print_int},
+		{'d', print_int},
 		{0, NULL}
 	};
 	int i;
