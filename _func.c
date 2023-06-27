@@ -18,5 +18,7 @@ int print_string(va_list args)
 {
 	char *arg = va_arg(args, char *);
 
+	if (arg == NULL)
+		arg = "(null)";
 	return (write(1, arg, strlen(arg)));
 }
