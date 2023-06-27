@@ -11,44 +11,35 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int len = strlen(format);
-	int i;
+	int (*fun)(va_list);
+	int i = 0;
+	unsigned int len = 0;
 
 	va_start(args, format);
-	for (i = 0; i < len; i++)
+
+	while (format[i])
 	{
-		/**
-		 * Printing a String.
-		 */
-		if (format[i] == '%' && format[i + 1] == 's')
+		if (format[i] == '%')
 		{
-			char *x = va_arg(args, char *);
-			int len_s = strlen(x);
-
-			write(1, x, len_s);
-			i++;
-		}
-		/**
-		 * Printing a Character
-		 */
-		else if (format[i] == '%' && format[i + 1] == 'c')
-		{
-			char c = va_arg(args, int);
-
-			write(1, &c, 1);
-			i++;
-		}
-		else if (format[i] == '%' && format[i + 1] == '%')
-		{
-			char pcent = '%';
-
-			write(1, &pcent, 1);
-			i++;
+			fun = get_p_func(format[i + 1]);
+			if (fun != NULL && format[i + 1] != '%')
+			{
+				len += fun(args);
+				i++;
+			}
+			else if (format[i + 1] == '%')
+			{
+				len += _putchar('%');
+				i++;
+			}
+			else
+				len += _putchar(format[i]);
 		}
 		else
 		{
-			write(1, &format[i], 1);
+			len += _putchar(format[i]);
 		}
+		i++;
 	}
 	va_end(args);
 

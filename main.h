@@ -1,14 +1,25 @@
-#ifndef PRINTF
-#define PRINTF
+#ifndef MAIN_H
+#define MAIN_H
 
+#include <stdlib.h>
+#include <stdarg.h>
 #include <unistd.h>
 #include <string.h>
-#include <stdarg.h>
 
-int _printf(const char *format, ...);
+/**
+ * struct flags - struct hold formated string flags.
+ * @flag: flag to conseder.
+ * @f: function to run.
+ */
+typedef struct flags
+{
+	char flag;
+	int (*f)();
+} flags;
+
 int _putchar(char c);
-int digits_count(int num);
-char int_to_char(int digit);
-char *int_to_str(int num);
-
+int _printf(const char *format, ...);
+int (*get_p_func(char s))(va_list);
+int print_char(va_list args);
+int print_string(va_list args);
 #endif
