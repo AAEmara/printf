@@ -47,7 +47,7 @@ int print_int(va_list args)
  * @t: int to be printed
  * Return: length of printed
  */
-int re_int (int t)
+int re_int (unsigned int t)
 {
 
 	if (t < 10)
