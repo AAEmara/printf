@@ -27,4 +27,5 @@ int print_int(va_list args);
 int re_binary(unsigned int t);
 int print_binary(va_list args);
 int print_revers(va_list args);
+int print_rot13(va_list args);
 #endif
