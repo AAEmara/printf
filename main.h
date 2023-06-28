@@ -11,11 +11,11 @@
  * @flag: flag to conseder.
  * @f: function to run.
  */
-typedef struct flags
+typedef struct specifiers
 {
-	char flag;
+	char specifier;
 	int (*f)();
-} flags;
+} specifiers;
 
 int _putchar(char c);
 int _printf(const char *format, ...);

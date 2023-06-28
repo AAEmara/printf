@@ -8,7 +8,7 @@
  */
 int (*get_p_func(char s))(va_list)
 {
-	flags flags[] = {
+	specifiers specifiers[] = {
 		{'c', print_char},
 		{'s', print_string},
 		{'i', print_int},
@@ -21,11 +21,11 @@ int (*get_p_func(char s))(va_list)
 	int i;
 
 	i = 0;
-	while (flags[i].flag != 0)
+	while (specifiers[i].specifier != 0)
 	{
-		if (flags[i].flag == s)
+		if (specifiers[i].specifier == s)
 		{
-			return (flags[i].f);
+			return (specifiers[i].f);
 		}
 		i++;
 	}
