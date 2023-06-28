@@ -13,6 +13,7 @@ int (*get_p_func(char s))(va_list)
 		{'s', print_string},
 		{'i', print_int},
 		{'d', print_int},
+		{'b', print_binary},
 		{0, NULL}
 	};
 	int i;
