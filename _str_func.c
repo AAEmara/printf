@@ -1,6 +1,40 @@
 #include "main.h"
 
 /**
+ * print_str - printfs a string from var args
+ * @args: va_list to print from
+ * Return: length of printed
+ */
+int print_str(va_list args)
+{
+	char *arg = va_arg(args, char *);
+	int l, i;
+
+	if (arg == NULL)
+	{
+		arg = "(null)";
+		return (write(1, arg, strlen(arg)));
+	}
+	l = 0;
+	i = 0;
+	while (arg[i])
+	{
+		if ((arg[i] > 0 && arg[i] < 32) || arg[i] >= 127)
+		{
+			l += _printf("\\x");
+			if (arg[i] <= 15)
+				l += _putchar('0');
+			l += re_x_capital(arg[i]);
+		}
+		else
+		{
+			l += _putchar(arg[i]);
+		}
+		i++;
+	}
+	return (l);
+}
+/**
  * print_revers - printfs a string from var args
  * @args: va_list to print from
  * Return: length of printed

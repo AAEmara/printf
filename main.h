@@ -36,5 +36,6 @@ int print_x_small(va_list args);
 int re_x_small(unsigned int t);
 int print_x_capital(va_list args);
 int re_x_capital(unsigned int t);
+int print_str(va_list args);
 
 #endif

@@ -18,6 +18,7 @@ int (*get_p_func(char s))(va_list)
 		{'o', print_octal},
 		{'x', print_x_small},
 		{'X', print_x_capital},
+		{'S', print_str},
 		{'r', print_revers},
 		{'R', print_rot13},
 		{0, NULL}
