@@ -1,6 +1,8 @@
 *-main.c
 main.c
 *.out
+printf
+tests/
 # Ignore vim files:
 *~
 .*.swp

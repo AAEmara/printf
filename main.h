@@ -7,8 +7,8 @@
 #include <string.h>
 #include <stdio.h>
 /**
- * struct flags - struct hold formated string flags.
- * @flag: flag to conseder.
+ * struct specifiers - struct hold formated string flags.
+ * @specifier: flag to conseder.
  * @f: function to run.
  */
 typedef struct specifiers

@@ -33,8 +33,8 @@ int print_rot13(va_list args)
 {
 	char *arg = va_arg(args, char *);
 	int l, i, j, f;
-	char alpha[] = {"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"};
-	char beta[] = {"nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM"};
+	char alpha[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char beta[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
 	if (arg == NULL)
 	{
@@ -43,7 +43,7 @@ int print_rot13(va_list args)
 	}
 	l = strlen(arg);
 	i = 0;
-	while (i > l)
+	while (i < l)
 	{
 		f = 0;
 		for (j = 0; alpha[j] && !f; j++)
@@ -58,6 +58,7 @@ int print_rot13(va_list args)
 		{
 			_putchar(arg[i]);
 		}
+		i++;
 	}
 	return (l);
 }
