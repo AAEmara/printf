@@ -14,6 +14,10 @@ int (*get_p_func(char s))(va_list)
 		{'i', print_int},
 		{'d', print_int},
 		{'b', print_binary},
+		{'u', print_unsind},
+		{'o', print_octal},
+		{'x', print_x_small},
+		{'X', print_x_capital},
 		{'r', print_revers},
 		{'R', print_rot13},
 		{0, NULL}

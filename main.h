@@ -1,5 +1,5 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef PRINTF_H
+#define PRINTF_H
 
 #include <stdlib.h>
 #include <stdarg.h>
@@ -26,6 +26,15 @@ int re_int (unsigned int t);
 int print_int(va_list args);
 int re_binary(unsigned int t);
 int print_binary(va_list args);
+int print_unsind(va_list args);
+int re_unsind(unsigned int t);
 int print_revers(va_list args);
 int print_rot13(va_list args);
+int print_octal(va_list args);
+int re_octal(unsigned int t);
+int print_x_small(va_list args);
+int re_x_small(unsigned int t);
+int print_x_capital(va_list args);
+int re_x_capital(unsigned int t);
+
 #endif
